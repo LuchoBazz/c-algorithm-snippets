@@ -34,8 +34,8 @@ void add_edge2(int u, int v) {
 
 void dfs(int u) {
   was[u] = 1;
-  forn(i, adj_cnt[u]) {
-    int v = adj[u][i];
+  forn(i, adj_cnt1[u]) {
+    int v = adj1[u][i];
     if (!was[v]) {
       dfs(v);
     }
