@@ -35,8 +35,9 @@ int main() {
 
 // string:
 // int len = strlen(s)
+// strcpy, strcat, strcmp, strncpy
 // input:
-// %s %d %lld
+// %s (char*) %d (int) %lld (ll) %c (char) %f (float) %lf (double) %u (unsigned) %x (Hexadecimal) %o (Octal)
 
 ll min(ll a, ll b) { return a < b ? a : b; }
 ll max(ll a, ll b) { return a > b ? a : b; }
