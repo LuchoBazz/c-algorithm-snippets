@@ -51,7 +51,7 @@ int main(void) {
 ll min(ll a, ll b) { return a < b ? a : b; }
 ll max(ll a, ll b) { return a > b ? a : b; }
 
-// Taken from rainboy (Rain Jiang) library
+// Taken from rainboy (Rain Jiang) library and modified
 unsigned int Z;
 int get_random() { return (Z *= 3) >> 1; }
 

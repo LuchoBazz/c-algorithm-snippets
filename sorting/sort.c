@@ -1,6 +1,7 @@
-// Taken from rainboy (Rain Jiang) library
+// Taken from rainboy (Rain Jiang) library and modified
 // #include <stdio.h>
 // #include <sys/time.h>
+// #define ll long long
 
 // void quick_sort(ll *, int, int);
 // void init_random();
