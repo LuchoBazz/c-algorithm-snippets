@@ -1,12 +1,5 @@
 #include <stdio.h>
 
-#define forn(i, n) for (int i = 0; i < (n); ++i)
-#define ll long long
-
-#define N (200000 + 5)
-
-ll A[N];
-
 void solve_one() {
   ;
 }
