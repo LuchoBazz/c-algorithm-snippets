@@ -20,7 +20,7 @@ ll max(ll, ll);
 void sort(int *, int, int);
 void init_random();
 
-#define N (100000 + 5)
+#define N (200000 + 5)
 
 int n, m;
 // char s[N];
