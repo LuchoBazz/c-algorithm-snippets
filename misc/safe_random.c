@@ -1,9 +1,9 @@
 unsigned long long Z;
 
 unsigned long long get_random() {
-  Z ^= Z << 13LL;
-  Z ^= Z >> 7LL;
-  Z ^= Z << 17LL;
+  Z ^= Z << 13ULL;
+  Z ^= Z >> 7ULL;
+  Z ^= Z << 17ULL;
   return Z;
 }
 
