@@ -2,6 +2,9 @@
 // #include <stdio.h>
 // #include <sys/time.h>
 
+// void quick_sort(ll *, int, int);
+// void init_random();
+
 unsigned int Z;
 int get_random() { return (Z *= 3) >> 1; }
 
@@ -11,7 +14,7 @@ void init_random() {
   Z = tv.tv_sec ^ tv.tv_usec | 1;
 }
 
-void sort(ll *array, int left, int right) { // [left, right)
+void quick_sort(ll *array, int left, int right) { // [left, right)
   while (left < right) {
     int pivot_index = left, low = left, high = right;
     ll pivot_value = array[left + get_random() % (right - left)], temp;
@@ -32,7 +35,7 @@ void sort(ll *array, int left, int right) { // [left, right)
         array[high] = temp;
       }
     }
-    sort(array, left, pivot_index);
+    quick_sort(array, left, pivot_index);
     left = high;
   }
 }
