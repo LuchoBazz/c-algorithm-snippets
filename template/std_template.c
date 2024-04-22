@@ -30,7 +30,7 @@ void solve_one() {
   ;
 }
 
-int main() {
+int main(void) {
   init_random();
 
   int T = 1;
