@@ -1,10 +1,11 @@
+// #define ll long long
 
 struct pair {
-  int first;
-  int second;
+  ll first;
+  ll second;
 };
 
-int compare_pairs(const void *a, const void *b) {
+ll compare_pairs(const void *a, const void *b) {
   struct pair *p1 = (struct pair *)a;
   struct pair *p2 = (struct pair *)b;
 
