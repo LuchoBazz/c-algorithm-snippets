@@ -13,7 +13,7 @@
 #define INF 1000000000
 #define INF64 0x3f3f3f3f3f3f3f3fLL
 #define ll long long
-#define endl "\n"
+#define write_endl putchar('\n')
 
 ll min(ll, ll);
 ll max(ll, ll);
