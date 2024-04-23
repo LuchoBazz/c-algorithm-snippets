@@ -1,6 +1,7 @@
 #include <stdio.h> // https://manual.cs50.io
 #include <string.h>
 #include <math.h>
+#include <assert.h>
 #include <sys/time.h>
 
 #ifdef ONLINE_JUDGE // Reference: https://codeforces.com/blog/entry/96344
