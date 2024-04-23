@@ -3,9 +3,9 @@
 
 #define sort_type int
 sort_type compare(const void *a, const void *b) {
-  sort_type ia = *(sort_type *)a;
-  sort_type ib = *(sort_type *)b;
-  return ia - ib;
+  sort_type first = *(sort_type *)a;
+  sort_type second = *(sort_type *)b;
+  return first - second;
 }
 
 void sort(sort_type *array, int n) {
