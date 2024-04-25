@@ -1,7 +1,7 @@
+#include <assert.h>
+#include <math.h>
 #include <stdio.h> // https://manual.cs50.io
 #include <string.h>
-#include <math.h>
-#include <assert.h>
 #include <sys/time.h>
 
 #ifdef ONLINE_JUDGE // Reference: https://codeforces.com/blog/entry/96344
@@ -11,29 +11,25 @@
 
 #define forn(i, n) for (int i = 0; i < (n); ++i)
 #define rof(i, n) for (int i = (n)-1; i >= 0; i--)
-#define INF 1000000000
-#define INF64 0x3f3f3f3f3f3f3f3fLL
-#define ll long long
 #define write_endl putchar('\n')
-
+#define abs abs_ll
+typedef long long ll;
 ll min(ll, ll);
 ll max(ll, ll);
-void quick_sort(ll *, int, int);
-void init_random();
+ll abs_ll(ll);
+#define sort_type ll
+sort_type compare(const void *, const void *);
+void sort(sort_type *, int, sort_type (*compare_array)(sort_type, sort_type));
 
+#define INF 1000000000
+#define INF64 0x3f3f3f3f3f3f3f3fLL
 #define N (200000 + 5)
-
-int n, m;
-// char s[N];
-ll A[N], B[N];
 
 void solve_one() {
   ;
 }
 
 int main(void) {
-  init_random();
-
   int T = 1;
   scanf("%d", &T);
   while (T-- > 0) {
@@ -52,39 +48,22 @@ int main(void) {
 
 ll min(ll a, ll b) { return a < b ? a : b; }
 ll max(ll a, ll b) { return a > b ? a : b; }
+ll abs_ll(ll num) { return num < 0 ? -num : num; }
 
-// Taken from rainboy (Rain Jiang) library and modified
-unsigned int Z;
-int get_random() { return (Z *= 3) >> 1; }
-
-void init_random() {
-  struct timeval tv;
-  gettimeofday(&tv, NULL);
-  Z = tv.tv_sec ^ tv.tv_usec | 1;
+sort_type compare(const void *a, const void *b) {
+  sort_type first = *(sort_type *)a;
+  sort_type second = *(sort_type *)b;
+  return first - second;
 }
 
-void quick_sort(ll *array, int left, int right) { // [left, right)
-  while (left < right) {
-    int pivot_index = left, low = left, high = right;
-    ll pivot_value = array[left + get_random() % (right - left)], temp;
-
-    while (low < high) {
-      if (array[low] == pivot_value)
-        low++;
-      else if (array[low] < pivot_value) {
-        temp = array[pivot_index];
-        array[pivot_index] = array[low];
-        array[low] = temp;
-        pivot_index++;
-        low++;
-      } else {
-        high--;
-        temp = array[low];
-        array[low] = array[high];
-        array[high] = temp;
-      }
-    }
-    quick_sort(array, left, pivot_index);
-    left = high;
+void sort(sort_type *array, int n,
+          sort_type (*compare_array)(sort_type, sort_type)) {
+  srand(time(NULL));
+  sort_type tmp;
+  for (int i = 0, j; i < n; i++) {
+    j = rand() % (i + 1);
+    tmp = array[i], array[i] = array[j], array[j] = tmp;
   }
+  qsort(array, n, sizeof *array, compare_array);
 }
+// sort(A, n, compare);

@@ -1,7 +1,8 @@
 // #include <stdlib.h>
 // #include <time.h>
+// typedef long long ll;
 
-#define sort_type int
+#define sort_type ll
 sort_type compare(const void *a, const void *b) {
   sort_type first = *(sort_type *)a;
   sort_type second = *(sort_type *)b;
