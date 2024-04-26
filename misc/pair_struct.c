@@ -1,18 +1,23 @@
-// #define ll long long
 
+#define pair_type int
 struct pair {
-  ll first;
-  ll second;
+  pair_type first;
+  pair_type second;
 };
 
-ll compare_pairs(const void *a, const void *b) {
+int cmp_pair(pair_type a, pair_type b) {
+  return (a == b) ? 0 : (a < b) ? -1 : 1;
+}
+
+int compare_pairs(const void *a, const void *b) {
   struct pair *p1 = (struct pair *)a;
   struct pair *p2 = (struct pair *)b;
 
-  if (p1->first == p2->first) {
-    return p1->second - p2->second;
+  pair_type first_cmp = cmp_pair(p1->first, p2->first);
+  if (first_cmp != 0) {
+    return first_cmp;
   }
-  return p1->first - p2->first;
+  return cmp(p1->second, p2->second);
 }
 // Usage:
 // struct pair pairs[N];
