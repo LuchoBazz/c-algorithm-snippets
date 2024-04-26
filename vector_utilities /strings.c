@@ -18,7 +18,12 @@ void pop_back_char(char **vec, int *len) {
   (*vec)[index] = '\0';
 }
 
-// -----------------------string-------------------------------------
+void push_str(char **dest, int *dest_len, char *origin, int origin_len) {
+  for (int i = 0; i < origin_len; ++i)
+    push_char(dest, dest_len, origin[i]);
+}
+
+// -----------------------string (push_char & pop_back_char)---------------------------
 // char* say = NULL;
 // int say_cnt = 0;
 // push_char(&say, &say_cnt, 'H');
@@ -29,17 +34,40 @@ void pop_back_char(char **vec, int *len) {
 //
 // pop_back_char(&say, &say_cnt);
 // printf("%d %s\n", say_cnt, say); // 4 Hell
-// ------------------------vector of string--------------------------
+// ------------------------vector of string (push_char & pop_back_char)--------------------------
 // #define N 2
 // char *arr_str[N];
 // int arr_cnt[N] = {0};
-// 
+//
 // push_char(&arr_str[0], &arr_cnt[0], 'H');
 // push_char(&arr_str[0], &arr_cnt[0], 'e');
 // push_char(&arr_str[1], &arr_cnt[1], 'l');
 // push_char(&arr_str[1], &arr_cnt[1], 'l');
-// 
+//
 // pop_back_char(&arr_str[1], &arr_cnt[1]);
-// 
+//
 // printf("%d %s\n", arr_cnt[0], arr_str[0]); // 2 He
 // printf("%d %s\n", arr_cnt[1], arr_str[1]); // 1 l
+// ------------------------string (push_char & push_str)--------------------------
+// char* say = NULL;
+// int say_cnt = 0;
+// push_char(&say, &say_cnt, 'H');
+// push_char(&say, &say_cnt, 'e');
+// push_str(&say, &say_cnt, "llo", 3);
+// 
+// printf("%d %s\n", say_cnt, say); // 5 Hello
+// ------------------------vector of string (push_char & push_str)--------------------------
+// #define N 2
+// char *arr_str[N];
+// int arr_cnt[N] = {0};
+//
+// push_char(&arr_str[0], &arr_cnt[0], 'H');
+// push_char(&arr_str[0], &arr_cnt[0], 'e');
+// push_str(&arr_str[0], &arr_cnt[0], "llo", 3);
+//
+// push_str(&arr_str[1], &arr_cnt[1], "Hel", 3);
+// push_char(&arr_str[1], &arr_cnt[1], 'l');
+// push_char(&arr_str[1], &arr_cnt[1], 'o');
+//
+// printf("%d %s\n", arr_cnt[0], arr_str[0]); // 5 Hello
+// printf("%d %s\n", arr_cnt[1], arr_str[1]); // 5 Hello
