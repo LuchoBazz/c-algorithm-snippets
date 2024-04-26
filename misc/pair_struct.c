@@ -1,5 +1,5 @@
 
-#define pair_type int
+#define pair_type int // only supports numeric values yet
 struct pair {
   pair_type first;
   pair_type second;
@@ -21,6 +21,6 @@ int compare_pairs(const void *a, const void *b) {
 }
 // Usage:
 // struct pair pairs[N];
-// pairs[0] = (struct pair) {0, 0};
-// int n = sizeof(pairs) / sizeof(pairs[0]);
+// int n = 0;
+// pairs[n++] = (struct pair) {0, 0};
 // qsort(pairs, n, sizeof(struct pair), compare_pairs);
