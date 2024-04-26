@@ -1,6 +1,6 @@
 // #define ll long long
 
-void unique(ll *source, int src_size, ll *destination, int *dest_size) {
+void unique(ll *destination, int *dest_size, ll *source, int src_size) {
   // sort(source, 0, src_size); // requires that source is sorted
   destination[0] = source[0];
   int dest_index = 0;
