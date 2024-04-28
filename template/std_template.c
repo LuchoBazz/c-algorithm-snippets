@@ -16,9 +16,11 @@
 #define write_endl putchar('\n')
 #define abs abs_ll
 typedef long long ll;
-ll min(ll, ll);
-ll max(ll, ll);
-ll abs_ll(ll);
+#define T_minmax ll
+T_minmax min(T_minmax a, T_minmax b);
+T_minmax max(T_minmax a, T_minmax b);
+#define T_abs ll
+T_abs abs_ll(T_abs);
 
 #define T_sort ll
 int compare(const void *, const void *);
@@ -49,9 +51,9 @@ int main(void) {
 // %u (unsigned), %x (Hexadecimal), %o (Octal)
 // output: fprintf(stderr, "%d", num); fflush(stdout)
 
-ll min(ll a, ll b) { return a < b ? a : b; }
-ll max(ll a, ll b) { return a > b ? a : b; }
-ll abs_ll(ll num) { return num < 0 ? -num : num; }
+T_minmax min(T_minmax a, T_minmax b) { return a < b ? a : b; }
+T_minmax max(T_minmax a, T_minmax b) { return a > b ? a : b; }
+T_abs abs_ll(T_abs num) { return num < 0 ? -num : num; }
 
 int compare(const void *a, const void *b) {
   T_sort first = *(T_sort *)a;
