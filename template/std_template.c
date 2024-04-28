@@ -1,6 +1,8 @@
+// https://manual.cs50.io
 #include <assert.h>
 #include <math.h>
-#include <stdio.h> // https://manual.cs50.io
+#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <sys/time.h>
 
@@ -24,7 +26,7 @@ void sort(sort_type *, int, int (*compare_array)(const void *, const void *));
 
 #define INF 1000000000
 #define INF64 0x3f3f3f3f3f3f3f3fLL
-#define N (200000 + 5)
+#define N (200000 + 2)
 
 void solve_one() {
   ;
