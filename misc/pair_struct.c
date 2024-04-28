@@ -1,11 +1,11 @@
 
-#define pair_type int // only supports numeric values yet
+#define T_pair int // only supports numeric values yet
 struct pair {
-  pair_type first;
-  pair_type second;
+  T_pair first;
+  T_pair second;
 };
 
-int cmp_pair(pair_type a, pair_type b) {
+int cmp_pair(T_pair a, T_pair b) {
   return (a == b) ? 0 : (a < b) ? -1 : 1;
 }
 
@@ -13,7 +13,7 @@ int compare_pairs(const void *a, const void *b) {
   struct pair *p1 = (struct pair *)a;
   struct pair *p2 = (struct pair *)b;
 
-  pair_type first_cmp = cmp_pair(p1->first, p2->first);
+  T_pair first_cmp = cmp_pair(p1->first, p2->first);
   if (first_cmp != 0) {
     return first_cmp;
   }

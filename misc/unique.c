@@ -1,8 +1,8 @@
 
-#define unique_type int
-unique_type *make_unique(unique_type *src, int src_sz, int *dest_size) {
-  unique_type *src_cloned = (unique_type *)malloc(src_sz * sizeof(unique_type));
-  unique_type *dest = (unique_type *)malloc(src_sz * sizeof(unique_type));
+#define T_unique int
+T_unique *make_unique(T_unique *src, int src_sz, int *dest_size) {
+  T_unique *src_cloned = (T_unique *)malloc(src_sz * sizeof(T_unique));
+  T_unique *dest = (T_unique *)malloc(src_sz * sizeof(T_unique));
   for (int i = 0; i < src_sz; ++i) src_cloned[i] = src[i];
   sort(src_cloned, src_sz, compare);
   dest[0] = src_cloned[0];

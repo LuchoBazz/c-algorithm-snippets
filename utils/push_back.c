@@ -1,12 +1,12 @@
 
-#define pb_type int
-void push_back(pb_type **vec, int *len, pb_type value) {
+#define T_pb int
+void push_back(T_pb **vec, int *len, T_pb value) {
   int index = (*len)++;
   int is_power_of_two = (index & (index - 1)) == 0;
   if (index == 0) {
-    *vec = (pb_type *)malloc(2 * sizeof(pb_type));
+    *vec = (T_pb *)malloc(2 * sizeof(T_pb));
   } else if (index >= 2 && is_power_of_two) {
-    *vec = (pb_type *)realloc(*vec, index * 2 * sizeof(pb_type));
+    *vec = (T_pb *)realloc(*vec, index * 2 * sizeof(T_pb));
   }
   (*vec)[index] = value;
 }
