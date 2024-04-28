@@ -1,10 +1,10 @@
 // Taken from rainboy (Rain Jiang) library and modified
-// #include <stdio.h>
-// #include <sys/time.h>
-// #define ll long long
+#include <stdio.h>
+#include <sys/time.h>
+// typedef long long ll;
 
-// void quick_sort(ll *, int, int);
-// void init_random();
+void quick_sort(ll *, int, int);
+void init_random();
 
 unsigned int Z;
 int get_random() { return (Z *= 3) >> 1; }

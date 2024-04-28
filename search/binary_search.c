@@ -1,4 +1,4 @@
-// #define ll long long
+// typedef long long ll;
 
 int binary_search(ll *source, int size, ll target) {
   int left = 0, right = size - 1;

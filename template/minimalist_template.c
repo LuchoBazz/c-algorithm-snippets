@@ -1,7 +1,13 @@
+// https://manual.cs50.io
+#include <assert.h>
+#include <math.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/time.h>
 
 #define forn(i, n) for (int i = 0; i < (n); ++i)
-#define ll long long
+typedef long long ll;
 
 void solve_one() {
   ;
