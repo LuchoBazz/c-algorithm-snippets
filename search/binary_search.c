@@ -1,6 +1,5 @@
-// typedef long long ll;
-
-int binary_search(ll *source, int size, ll target) {
+#define T_bs int
+int binary_search(T_bs *source, int size, T_bs target) {
   int left = 0, right = size - 1;
   while (left <= right) {
     int mid = (left + right) / 2;

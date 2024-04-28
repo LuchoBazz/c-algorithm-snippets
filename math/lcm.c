@@ -1,5 +1,4 @@
-// typedef long long ll;
-
-ll lcm(ll a, ll b) {  
-  return (a * b) /gcd(a, b);  
+#define T_lcm int
+T_lcm lcm(T_lcm a, T_lcm b) {  
+  return (a * b) / gcd(a, b);  
 }
