@@ -1,4 +1,5 @@
 // Taken from rainboy (Rain Jiang) library and modified
+// Reference: https://codeforces.com/contest/1970/submission/259673069
 
 #define SIZE_N 1000
 #define SIZE_K 30
