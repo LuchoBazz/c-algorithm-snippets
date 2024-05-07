@@ -1,10 +1,11 @@
 // Taken from rainboy (Rain Jiang) library and modified
-#include <stdio.h>
-#include <sys/time.h>
-// typedef long long ll;
+// #include <stdio.h>
+// #include <sys/time.h>
 
-void quick_sort(ll *, int, int);
+#define T_sort int
+void quick_sort(T_sort *, int, int);
 void init_random();
+
 
 unsigned int Z;
 int get_random() { return (Z *= 3) >> 1; }
@@ -15,10 +16,10 @@ void init_random() {
   Z = tv.tv_sec ^ tv.tv_usec | 1;
 }
 
-void quick_sort(ll *array, int left, int right) { // [left, right)
+void quick_sort(T_sort *array, int left, int right) { // [left, right)
   while (left < right) {
     int pivot_index = left, low = left, high = right;
-    ll pivot_value = array[left + get_random() % (right - left)], temp;
+    T_sort pivot_value = array[left + get_random() % (right - left)], temp;
 
     while (low < high) {
       if (array[low] == pivot_value)
