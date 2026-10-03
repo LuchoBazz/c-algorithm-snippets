@@ -8,12 +8,12 @@ void map_init() {
   memset(value_at, EMPTY, sizeof(value_at));
 }
 
-int hash(int key) {
+int map_hash(int key) {
   return ((key % SIZE) + SIZE) % SIZE;
 }
 
 int map_get(int key) {
-  int slot = hash(key);
+  int slot = map_hash(key);
   while (value_at[slot] != EMPTY) {
     if (key_at[slot] == key) {
       return value_at[slot];
@@ -24,7 +24,7 @@ int map_get(int key) {
 }
 
 void map_set(int key, int value) {
-  int slot = hash(key);
+  int slot = map_hash(key);
   while (value_at[slot] != EMPTY) {
     slot = (slot + 1) % SIZE;
   }
