@@ -9,6 +9,7 @@ void map_init() {
 }
 
 int map_hash(int key) {
+  // return (unsigned) (key & (SIZE - 1));
   return ((key % SIZE) + SIZE) % SIZE;
 }
 
