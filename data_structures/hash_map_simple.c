@@ -33,19 +33,12 @@ void map_set(int key, int value) {
 }
 
 // Usage:
-// int* twoSum(int* nums, int n, int target, int* returnSize) {
-//   int* ans = malloc(2 * sizeof(int));
-//   *returnSize = 2;
-//   map_init();
-
-//   for (int i = 0; i < n; i++) {
-//     int prev = map_get(target - nums[i]);   // index of the complement
-//     if (prev != EMPTY) {
-//       ans[0] = prev;
-//       ans[1] = i;
-//       return ans;
-//     }
+// bool containsDuplicate(int* nums, int n) {
+//   init_map();
+//   for(int i = 0; i < n; ++i) {
+//     bool repeated = map_get(nums[i]) != -1;
+//     if(repeated) return true;
 //     map_set(nums[i], i);
 //   }
-//   return ans;
+//   return false;
 // }
