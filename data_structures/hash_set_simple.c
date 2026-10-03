@@ -24,12 +24,12 @@ bool set_has(int key) {
 }
 
 void set_add(int key) {
-    int slot = set_hash(key);
-    while (used_at[slot]) {
-      slot = (slot + 1) % SIZE;
-    }
-    key_at[slot] = key;
-    used_at[slot] = true;
+  int slot = set_hash(key);
+  while (used_at[slot]) {
+    slot = (slot + 1) % SIZE;
+  }
+  key_at[slot] = key;
+  used_at[slot] = true;
 }
 
 // Usage:
