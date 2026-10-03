@@ -1,4 +1,4 @@
-#define SIZE   (2 << 14)   // 32768 = 2^15, table capacity
+#define SIZE   (2 << 21)   // 2,097,152
 #define EMPTY -1
 
 int key_at[SIZE];
